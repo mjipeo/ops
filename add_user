@@ -1,0 +1,13 @@
+#!/bin/bash
+
+USER=someone
+HOME_DIR=/home/$USER
+GROUPADD=/usr/sbin/groupadd
+USERADD=/usr/sbin/useradd
+PASSWD=/usr/bin/passwd
+TEE=/usr/bin/tee
+
+sudo $GROUPADD $USER
+sudo $USERADD $USER -g $USER -m --home=$HOME_DIR
+sudo chmod 755 /home/$USER
+sudo $PASSWD $USER
